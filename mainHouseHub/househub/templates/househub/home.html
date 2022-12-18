@@ -1,0 +1,24 @@
+{% extends "househub/base.html" %} {% block title %}Sign Up{% endblock %}
+{% block content %}
+    <h1 align = "center">Home</h1>
+    {% if not users %}
+        <p align = "center">No users</p>
+    {% else %}
+        <table class = "table">
+            <tr>
+                <td>E-Mail</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Password</td>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.email }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.password }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
